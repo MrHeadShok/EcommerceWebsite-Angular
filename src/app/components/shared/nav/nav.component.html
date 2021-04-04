@@ -7,5 +7,48 @@
     <a class="p-2 text-dark" href="#">Support</a>
     <a class="p-2 text-dark" href="#">Carreers</a>
   </nav>
-  <a class="btn btn-outline-primary bg-info text-white" href="#">Sign up</a>
+  <a class="btn btn-outline-primary bg-info text-white" (click)="open(mymodal)" type="submit">Add a product</a>
+
+
+  <ng-template #mymodal let-modal>
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Adding a new Product? </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">X</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+
+
+      <div class="field">
+        <input type="text" class="form-control" ng-model="productName" placeholder="Product Name" />
+
+        <br>
+        <input type="number" class="form-control" placeholder="Price per Unit">
+
+        <br>
+        <input type="number" class="form-control" placeholder="Quantity">
+        <br>
+        <textarea class="form-control" aria-label="With textarea" placeholder="Product Description"></textarea>
+        <br>
+        <input type="number" class="form-control" placeholder="Rating" max=5>
+
+      </div>
+
+
+
+
+    </div>
+    <div class="modal-footer">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-danger " (click)="modal.close('Save click')">Cancel</button>
+        <button type="button" class="btn btn-sm btn-primary cartdetail"  (click)="saveData()">Add new Item</button>
+      </div>
+    </div>
+
+  </ng-template>
+
+
 </div>

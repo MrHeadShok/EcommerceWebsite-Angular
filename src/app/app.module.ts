@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,14 @@ import { FiltersComponent } from './components/shoppingcart/filters/filters.comp
 import { ProductlistComponent } from './components/shoppingcart/productlist/productlist.component';
 import { CartComponent } from './components/shoppingcart/cart/cart.component';
 import { CartItemComponent } from './components/shoppingcart/cart/cart-item/cart-item.component';
-import { ProductitemComponent } from './components/shoppingcart/productlist/productitem/productitem.component'
+import { ProductitemComponent } from './components/shoppingcart/productlist/productitem/productitem.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+
+import { HttpClientModule } from '@angular/common/http'
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,11 +32,17 @@ import { ProductitemComponent } from './components/shoppingcart/productlist/prod
     ProductlistComponent,
     CartComponent,
     CartItemComponent,
-    ProductitemComponent
+    ProductitemComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
