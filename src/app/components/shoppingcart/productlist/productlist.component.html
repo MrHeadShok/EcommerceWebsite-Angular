@@ -1,7 +1,77 @@
-<div class="row">
-    <div class="col-md-4" *ngFor="let i of [1,2,3,4,5,6]">
-<app-productitem></app-productitem>
-</div>
+   
+   <div class="search">
+       <input  class="form-control" type="text"  name="search" autocomplete="off"
+         placeholder="  Looking for something specific?"
+         >
+     </div>
+
+     <div class="row">
+
+       <div class="col-md-4" *ngFor="let item of products">
+
+         <div class="col">
+           <div class="card shadow-sm">
+             <img class="bd-placeholder-img card-img-top" width="100%"
+               src="https://cdn.mos.cms.futurecdn.net/gi4ofLVzjTvrTAjJCbLC53-970-80.jpg.webp" />
+             <strong> {{item.productPrice| currency:'EUR'}}</strong>
+
+             <div class="card-body">
+               <h2 class="card-text">{{item.productName}} </h2>
+               <br>
+               <p class="card-text">We still got <strong> {{item.productQuantity}} units </strong> in stock </p>
+               <div class="d-flex justify-content-between align-items-center">
+                 <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-primary cartdetail">Add to cart</button>
+                   <button type="button" class="btn btn-sm btn-outline-secondary cartdetail" (click)="open(mymodal)">
+                     Details</button>
 
 
-</div>
+                   <ng-template #mymodal let-modal>
+
+                     <div class="modal-header">
+                       <h4 class="modal-title" id="modal-basic-title">Details </h4>
+                       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                         <span aria-hidden="true">X</span>
+                       </button>
+                     </div>
+
+
+
+                     <div class="form-group">
+
+
+
+                       <div class="modal-body">
+
+
+                         <div class="field">
+                           <p> <strong> Product name: </strong> {{item.productName}}</p>
+                           <p> <strong>Description: </strong>{{item.productDescription}}</p>
+                           <p> <strong>Quantity: </strong>{{item.productQuantity}}</p>
+                           <p> <strong>Price: </strong>{{item.productPrice}}</p>
+                           <p> <strong>Rating: </strong>{{item.productRating}}</p>
+                         </div>
+
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-sm btn-primary" 
+                           (click)="modal.close('Save click')">Close</button>
+
+                          <button type="button" class="btn btn-sm btn-danger "
+                           (click)="deleteProduct()">Delete Product</button>
+
+                       </div>
+                     </div>
+                   </ng-template>
+                 </div>
+
+               </div>
+
+
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+     </div>

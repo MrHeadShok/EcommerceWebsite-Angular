@@ -18,36 +18,47 @@
         <span aria-hidden="true">X</span>
       </button>
     </div>
-    <div class="modal-body">
+
+
+    <div *ngIf="!submitted">
+      <div class="form-group">
 
 
 
-      <div class="field">
-        <input type="text" class="form-control" ng-model="productName" placeholder="Product Name" />
+        <div class="modal-body">
 
-        <br>
-        <input type="number" class="form-control" placeholder="Price per Unit">
 
-        <br>
-        <input type="number" class="form-control" placeholder="Quantity">
-        <br>
-        <textarea class="form-control" aria-label="With textarea" placeholder="Product Description"></textarea>
-        <br>
-        <input type="number" class="form-control" placeholder="Rating" max=5>
+          <div class="field">
+            <input type="text" class="form-control" placeholder="Product Name" name="productName" required
+              [(ngModel)]="product.productName" />
 
+            <br>
+            <input type="number" class="form-control" placeholder="Price per Unit" name="productPrice" required
+              [(ngModel)]="product.productPrice">
+
+            <br>
+            <input type="number" class="form-control" placeholder="Quantity" name="productQuantity" required
+              [(ngModel)]="product.productQuantity">
+            <br>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Product Description"
+              name="productDescription" required [(ngModel)]="product.productDescription"></textarea>
+            <br>
+            <input type="number" class="form-control" placeholder="Rating" max=5 name="productRating" required
+              [(ngModel)]="product.productRating">
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-danger "
+              (click)="modal.close('Save click')">Cancel</button>
+            <button (click)="addProduct()" class="postbutton" class="btn btn-sm btn-primary cartdetail">Add new
+              Item</button>
+          </div>
+        </div>
       </div>
-
-
-
-
     </div>
-    <div class="modal-footer">
-      <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-outline-danger " (click)="modal.close('Save click')">Cancel</button>
-        <button type="button" class="btn btn-sm btn-primary cartdetail"  (click)="saveData()">Add new Item</button>
-      </div>
-    </div>
-
   </ng-template>
 
 
