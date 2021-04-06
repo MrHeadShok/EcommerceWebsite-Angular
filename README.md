@@ -28,10 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # EcommerceWebsite-Angular
 
 <br>
-![](https://user-images.githubusercontent.com/54212105/113677063-7290a700-96bd-11eb-8381-a1d5d5033a87.PNG)
-<br>![2](https://user-images.githubusercontent.com/54212105/113677220-9fdd5500-96bd-11eb-9a16-1170364d0143.PNG)
+
 <br>
-![3](https://user-images.githubusercontent.com/54212105/113677245-aa97ea00-96bd-11eb-8a9b-a5449458fbc2.PNG)
+<br>
 <br>
 <br>
 <br>
