@@ -33,10 +33,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <br>
 
 
-<br><br>[](Screenshots/2.PNG)<br>
-<br><br>[](Screenshots/3.PNG)<br>
-<br><br>[](Screenshots/4.PNG)<br>
-<br><br>[](Screenshots/5.PNG)<br>
+<br><br>![](Screenshots/2.PNG)<br>
+<br><br>![](Screenshots/3.PNG)<br>
+<br><br>![](Screenshots/4.PNG)<br>
+<br><br>![](Screenshots/5.PNG)<br>
 
 <br> <br>
 **Project is still under-work**
