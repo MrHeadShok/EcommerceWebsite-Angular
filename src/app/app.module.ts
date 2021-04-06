@@ -16,8 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
-
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -27,7 +25,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipePipe } from './shared/filter-pipe.pipe';
 
 
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,6 +51,7 @@ import { FilterPipePipe } from './shared/filter-pipe.pipe';
     MatSliderModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     Ng2SearchPipeModule

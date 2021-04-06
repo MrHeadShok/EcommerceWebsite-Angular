@@ -8,6 +8,9 @@ import { Product } from '../../../models/product.model'
 import { ProductStoreService } from '../../../services/product-store.service'
 
 
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -26,7 +29,26 @@ export class NavComponent implements OnInit {
   product: Product = new Product();
   submitted = false;
 
-  constructor(private modalService: NgbModal, private http: HttpClient, private productService: ProductStoreService) { }
+  //form validation
+  form = new FormGroup({
+
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
+    email: new FormControl('', [Validators.required, Validators.email]),
+
+    body: new FormControl('', Validators.required)
+
+  });
+
+
+  constructor(private modalService: NgbModal,
+    private http: HttpClient,
+    private productService: ProductStoreService,
+    private fb: FormBuilder
+  ) {
+
+
+  }
 
   ngOnInit(): void {
 
